@@ -1,93 +1,102 @@
-import React, { useEffect, useState } from "react";
-import { navbarList } from "../constant";
-import { AnimatePresence, motion } from "framer-motion";
-import { AiOutlineMenu } from "react-icons/ai";
-import { IoMdClose } from "react-icons/io";
+import React, { useState } from "react";
+import { navList } from "../constants";
+import { motion } from "framer-motion";
+import { menuIcon, closeIcon } from "../assets";
 
-const menuVariant = {
-  closed: {
+const menuContainerVariant = {
+  hidden: {
     opacity: 0,
     x: "-100%",
-    transition: { stiffness: 20, damping: 15 },
+    transition: {
+      stiffness: 20,
+      damping: 15,
+    },
   },
-  open: { opacity: 1, x: 0, transition: { stiffness: 20, damping: 15 } },
+
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      staggerChildren: 0.1,
+      stiffness: 20,
+      damping: 15,
+    },
+  },
+};
+
+const menuVariant = {
+  hidden: {
+    opacity: 0,
+    x: "-100%",
+    transition: {
+      stiffness: 20,
+      damping: 15,
+    },
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      stiffness: 20,
+      damping: 15,
+    },
+  },
 };
 
 function Navbar() {
-  const [isClosed, setIsClosed] = useState(false);
-  const [showNavBar, setShowNavBar] = useState(false);
+  const [navStatus, setNavStatus] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setShowNavBar(scrollPosition > 300);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const handleNavStatus = () => setNavStatus((prev) => !prev);
 
   return (
-    <AnimatePresence>
-      {showNavBar && (
-        <motion.div
-          initial={{ opacity: 0, y: -100 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -100 }}
-          transition={{ duration: 0.3 }}
-          className="bg-secondary fixed z-50 top-0 left-0 w-full"
-        >
-          <header className="padding-x max-container flex justify-between items-center py-2 lg:py-4">
-            <p className="text-3xl font-black z-50">RM.</p>
+    <div className="fixed top-0 left-0 w-full z-50 bg-primary">
+      <header className="relative max-container flex z-50 justify-between items-center py-4 padding-x">
+        <p className="text-2xl sm:text-3xl font-black text-white">RM.</p>
+        <nav>
+          <ul className="hidden lg:flex gap-8">
+            {navList.map((item) => (
+              <li key={item.href}>
+                <a
+                  href={item.href}
+                  className="text-lg font-semibold text-gray-500 border-b-2 border-transparent hover:border-accent hover:text-white p-1"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-            <motion.div
+          <img
+            className="block lg:hidden w-[30px] h-[25px]"
+            src={navStatus ? closeIcon : menuIcon}
+            onClick={handleNavStatus}
+            alt="Menu Icon"
+          />
+        </nav>
+      </header>
+
+      {/*menu slide*/}
+      <motion.div
+        variants={menuContainerVariant}
+        initial={false}
+        animate={navStatus ? "visible" : "hidden"}
+        className="absolute left-0 top-0 z-10 min-h-screen w-full bg-primary"
+      >
+        <ul className="pt-32 px-16">
+          {navList.map((item) => (
+            <motion.li
               variants={menuVariant}
-              initial={false}
-              animate={isClosed ? "open" : "closed"}
-              className="block lg:hidden w-full h-screen z-10 absolute left-0 top-0 bg-secondary pt-20"
+              key={item.href}
+              className="py-8 border-b-2 border-accent text-center"
             >
-              <ul className="px-16 flex flex-col gap-8">
-                {navbarList.map((navItem) => (
-                  <li
-                    key={navItem.label}
-                    className="text-onSecondary font-semibold text-2xl border-b-1 border-b-primary p-4 text-center"
-                    onClick={() => setIsClosed((prev) => !prev)}
-                  >
-                    <a href={navItem.href}>{navItem.label}</a>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            <div
-              className="block lg:hidden z-50"
-              onClick={() => setIsClosed((prev) => !prev)}
-            >
-              {isClosed ? (
-                <IoMdClose className="text-white" size={30} />
-              ) : (
-                <AiOutlineMenu className="text-white" size={30} />
-              )}
-            </div>
-
-            <nav className="hidden lg:block">
-              <ul className="flex gap-16">
-                {navbarList.map((navItem) => (
-                  <li key={navItem.label}>
-                    <a
-                      className="text-lg font-medium text-onSecondary pb-2 border-b-2 border-transparent hover:border-b-primary hover:text-white"
-                      href={navItem.href}
-                    >
-                      {navItem.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </header>
-        </motion.div>
-      )}
-    </AnimatePresence>
+              <a href={item.href} className="text-white text-3xl font-semibold">
+                {item.label}
+              </a>
+            </motion.li>
+          ))}
+        </ul>
+      </motion.div>
+    </div>
   );
 }
 

@@ -1,26 +1,26 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import HeroSection from "./sections/HeroSection";
-import AboutMeSection from "./sections/AboutMeSection";
-import PortfolioSection from "./sections/PortfolioSection";
-import ExperienceSection from "./sections/ExperienceSection";
-import ContactMeSection from "./sections/ContactMeSection";
-import { useEffect } from "react";
-function App() {
-  useEffect(() => {
-    window.history.scrollRestoration = "manual";
-  }, []);
+import Hero from "./sections/Hero";
+import CanProvide from "./sections/CanProvide";
+import About from "./sections/About";
+import Experience from "./sections/Experience";
+import Project from "./sections/Project";
+import Skill from "./sections/Skill";
+import ContactForm from "./sections/ContactForm";
+import Footer from "./sections/footer";
 
+function App() {
   return (
     <main>
       <Navbar />
-      <div className="pb-16">
-        <HeroSection />
-      </div>
-      <AboutMeSection />
-      <PortfolioSection />
-      <ExperienceSection />
-      <ContactMeSection />
+      <Hero />
+      <CanProvide />
+      <About />
+      <Experience />
+      <Project />
+      <Skill />
+      <ContactForm />
+      <Footer />
     </main>
   );
 }
