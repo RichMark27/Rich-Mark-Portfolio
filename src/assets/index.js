@@ -10,7 +10,7 @@ import htmlIcon from "./skills-icons/html.png";
 import cssIcon from "./skills-icons/css.png";
 import javascriptIcon from "./skills-icons/javascript.png";
 import reactIcon from "./skills-icons/react.png";
-import tailwindIcon from "./skills-icons/tailwind_CSS.png";
+import tailwindIcon from "./skills-icons/Tailwind_CSS.png";
 import nodejsIcon from "./skills-icons/nodejs.png";
 import mongodbIcon from "./skills-icons/mongodb.png";
 import gitIcon from "./skills-icons/git.png";
