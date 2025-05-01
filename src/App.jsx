@@ -7,7 +7,7 @@ import Experience from "./sections/Experience";
 import Project from "./sections/Project";
 import Skill from "./sections/Skill";
 import ContactForm from "./sections/ContactForm";
-import Footer from "./sections/footer";
+import Footer from "./sections/Footer";
 
 function App() {
   return (
