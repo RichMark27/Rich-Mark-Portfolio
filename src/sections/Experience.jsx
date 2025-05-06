@@ -1,23 +1,52 @@
 import React from "react";
 import ExperienceCard from "../components/cards/ExperienceCard";
 import { experienceList } from "../constants";
+import { motion } from "framer-motion";
+
+const experienceContainerVariant = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+
+    transition: { delay: 0.5, duration: 0.5, staggerChildren: 1 },
+  },
+};
+
+const experienceVariant = {
+  hidden: { opacity: 0, y: 30, transition: { duration: 1 } },
+  visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+};
 
 function Experience() {
   return (
-    <div className="py-16">
+    <div id="experience" className="py-16">
       <section className="padding-x max-container">
-        <h2 className="text-white">My Work Experience</h2>
-        <div className="pt-8">
+        <motion.h2
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-white"
+        >
+          My Work Experience
+        </motion.h2>
+        <motion.div
+          variants={experienceContainerVariant}
+          initial={"hidden"}
+          whileInView={"visible"}
+          viewport={{ once: false }}
+          className="pt-8"
+        >
           {experienceList.map((work) => (
-            <ExperienceCard
-              key={work.date}
-              date={work.date}
-              workPosition={work.workPosition}
-              companyName={work.companyName}
-              textBody={work.textBody}
-            />
+            <motion.div variants={experienceVariant} key={work.date}>
+              <ExperienceCard
+                date={work.date}
+                workPosition={work.workPosition}
+                companyName={work.companyName}
+                textBody={work.textBody}
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
     </div>
   );

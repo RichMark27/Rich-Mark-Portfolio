@@ -9,9 +9,11 @@ import Skill from "./sections/Skill";
 import ContactForm from "./sections/ContactForm";
 import Footer from "./sections/Footer";
 
+
 function App() {
   return (
     <main>
+
       <Navbar />
       <Hero />
       <CanProvide />

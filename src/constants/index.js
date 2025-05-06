@@ -14,9 +14,9 @@ import {
 import { viberNumberIcon, locationIcon, gmailIcon } from "../assets/index";
 
 export const navList = [
-  { href: "#home", label: "Home" },
+  { href: "/", label: "Home" },
   { href: "#about", label: "About" },
-  { href: "#exprience", label: "Experience" },
+  { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projecs" },
   { href: "#skills", label: "Skills" },
   { href: "#contact", label: "Contact" },
@@ -89,6 +89,6 @@ export const skillList = [
 
 export const contactList = [
   { img_URL: viberNumberIcon, label: "+63 9XX XXX XXXX" },
-  { img_URL: locationIcon, label: "Las Piñas" },
+  { img_URL: locationIcon, label: "Pampanga / Las Piñas" },
   { img_URL: gmailIcon, label: "my@gamil.com" },
 ];

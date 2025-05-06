@@ -23,7 +23,6 @@ const menuContainerVariant = {
     },
   },
 };
-
 const menuVariant = {
   hidden: {
     opacity: 0,
@@ -49,16 +48,23 @@ function Navbar() {
   const handleNavStatus = () => setNavStatus((prev) => !prev);
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50 bg-primary">
+    <motion.div
+      className="fixed top-0 left-0 w-full z-50 bg-primary"
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ stiffness: 20, damping: 15, duration: 0.5, delay: 0.5 }}
+    >
       <header className="relative max-container flex z-50 justify-between items-center py-4 padding-x">
-        <p className="text-2xl sm:text-3xl font-black text-white">RM.</p>
+        <p className="text-2xl sm:text-3xl font-black text-white">
+          <a href="/">RM.</a>
+        </p>
         <nav>
           <ul className="hidden lg:flex gap-8">
             {navList.map((item) => (
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="text-lg font-semibold text-gray-500 border-b-2 border-transparent hover:border-accent hover:text-white p-1"
+                  className={`text-lg font-semibold text-gray-500 border-b-2 border-transparent hover:border-accent hover:text-white p-1`}
                 >
                   {item.label}
                 </a>
@@ -96,7 +102,7 @@ function Navbar() {
           ))}
         </ul>
       </motion.div>
-    </div>
+    </motion.div>
   );
 }
 
