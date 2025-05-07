@@ -38,18 +38,20 @@ function Hero() {
             transition={{ duration: 1, delay: 1.5 }}
             className="flex gap-8"
           >
-            <motion.button
-              initial={{ scale: 1 }}
-              whileHover={{ scale: 1.2 }}
-              className="text-base font-semibold uppercase px-8 py-4 text-white bg-accent rounded-lg"
-            >
-              contact me
-            </motion.button>
+            <a href="#contact">
+              <motion.button
+                initial={{ scale: 1 }}
+                whileHover={{ scale: 1.2 }}
+                className="text-base font-semibold uppercase px-8 py-4 text-white bg-accent rounded-lg cursor-pointer"
+              >
+                contact me
+              </motion.button>
+            </a>
             <a href="/Rich-Mark-Landicho.pdf" download>
               <motion.button
                 initial={{ scale: 1 }}
                 whileHover={{ scale: 1.2 }}
-                className="text-base font-semibold text-white uppercase py-4 px-8 border-2 border-accent rounded-lg"
+                className="text-base font-semibold text-white uppercase py-4 px-8 border-2 border-accent rounded-lg hover:bg-accent cursor-pointer"
               >
                 download cv
               </motion.button>

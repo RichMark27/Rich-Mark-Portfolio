@@ -36,8 +36,13 @@
   }
 
   input {
-    @apply text-lg text-gray-500 font-medium outline-none border-b-2 border-b-[#808080];
+    @apply text-lg placeholder:font-normal placeholder:text-gray-500 font-medium outline-none border-b-2 border-b-[#808080] focus:border-accent text-white;
   }
+
+  textarea{
+    @apply text-lg placeholder:font-normal placeholder:text-gray-500 border-[#808080] outline-none border-2 rounded-lg h-[300px] p-2 focus:border-accent text-white
+  }
+
 }
 
 @layer components {

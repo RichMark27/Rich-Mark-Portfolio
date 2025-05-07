@@ -2,6 +2,7 @@ import React from "react";
 import ContactCard from "../components/cards/ContactCard";
 import { contactList } from "../constants";
 import { motion } from "framer-motion";
+import ContactFormInput from "../components/ContactFormInput";
 
 function ContactForm() {
   return (
@@ -50,30 +51,7 @@ function ContactForm() {
             </motion.div>
           </div>
           <div>
-            <motion.form
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: false }}
-              transition={{ duration: 1.5, delay: 1.5 }}
-              action=""
-              className="mx-auto p-4 flex flex-col border-2 border-[#808080] rounded-lg mt-16 gap-8 pt-16 w-full md:w-[650px] lg:w-[550px] xl:w-[600px]"
-            >
-              <input type="text" placeholder="Your Name" required />
-              <input type="text" placeholder="Your Email" required />
-              <textarea
-                className="text-gray-500 text-lg outline-none border-2 rounded-lg h-[350px] p-2"
-                placeholder="Share your thoughts"
-                required
-              />
-
-              <motion.button
-                initial={{ scale: 1 }}
-                whileHover={{ scale: 1.2 }}
-                className="font-lg font-semibold bg-accent text-white py-4 w-[240px] mx-auto rounded-lg"
-              >
-                Send Message
-              </motion.button>
-            </motion.form>
+            <ContactFormInput />
           </div>
         </section>
       </div>
