@@ -1,5 +1,6 @@
 import React from "react";
 import { facebookIcon, tiktokIcon, instagramIcon, xIcon } from "../assets";
+import { githubIcon } from "../assets";
 
 function Footer() {
   return (
@@ -15,6 +16,7 @@ function Footer() {
             height={30}
           />
           <img src={xIcon} alt="X Icon" width={30} height={30} />
+          <a href="https://github.com/RichMark27" target="_blank"><img className="rounded-full" src={githubIcon} alt="Github Icon" width={30} height={30} /></a>
         </div>
         <p>2023 - RM, All rights reserved</p>
       </section>

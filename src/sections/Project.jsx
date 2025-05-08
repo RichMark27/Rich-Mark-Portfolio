@@ -1,6 +1,7 @@
 import React from "react";
 import ProjectCard from "../components/cards/ProjectCard";
 import { motion } from "framer-motion";
+import { projectList } from "../constants";
 
 const projectContainerVariant = {
   hidden: { opacity: 0 },
@@ -35,12 +36,19 @@ function Project() {
             whileInView={"visible"}
             className="py-8 space-y-4"
           >
-            <motion.div variants={projectVariant}>
-              <ProjectCard />
-            </motion.div>
-            <motion.div variants={projectVariant}>
-              <ProjectCard />
-            </motion.div>
+            {projectList.map((item) => (
+              <motion.div key={item.title} variants={projectVariant}>
+                <ProjectCard
+                  bg_URL={item.bg_URL}
+                  img_URL={item.img_URL}
+                  title={item.title}
+                  textBody={item.textBody}
+                  tools={item.tools}
+                />
+              </motion.div>
+            ))}
+
+
           </motion.div>
         </section>
       </div>

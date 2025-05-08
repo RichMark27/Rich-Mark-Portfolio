@@ -29,7 +29,7 @@ function CanProvide() {
           className="text-center rounded-lg bg-secondary p-4"
         >
           <h3 className="text-white">What I can Provide?</h3>
-          <div className="mt-8 space-y-8 flex flex-col lg:flex-row lg:gap-16">
+          <div className="mt-8 space-y-8 flex flex-col lg:flex-row lg:flex-wrap lg:gap-16">
             {CanProvideList.map((canProvide) => (
               <motion.div
                 variants={canProvideVariant}

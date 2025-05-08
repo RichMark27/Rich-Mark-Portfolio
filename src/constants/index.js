@@ -12,6 +12,7 @@ import {
   githubIcon,
 } from "../assets/index";
 import { viberNumberIcon, locationIcon, gmailIcon } from "../assets/index";
+import { balagtasyunaryoBg, balagtasyunaryoLogo } from "../assets/index";
 
 export const navList = [
   { href: "/", label: "Home" },
@@ -49,28 +50,28 @@ export const experienceList = [
     workPosition: "Operations Manager",
     companyName: "Likhasan Reading and Tutorial Services",
     textBody:
-      "Creating a web design for the website of the tutorial center Creating graphic designs for the educational materials Managing the operations for the printing of educational materials Mentoring the staff for the printing of educational materials",
+      "Creating a web design for the tutorial center's website, creating graphic designs for educational materials, managing operations for printing educational materials, and mentoring staff for printing educational materials.",
   },
   {
     date: "Jun 2023 - Dec 2025",
     workPosition: "Business Owner",
     companyName: "Arcie's Collection",
     textBody:
-      "Managing the daily operations of the business Putting up quality products and services for the people Managing the daily sales and expenses of the business Analyzing the data of the sales",
+      "Managing the daily operations of the business Putting up quality products and services for the people, Managing daily sales and expenses of the business Analyzing the data of the sales",
   },
   {
     date: "Jan 2023 - Jun 2023",
     workPosition: "Software Quality Assurance Engineer",
     companyName: "Logicore Innovative Solutions",
     textBody:
-      "Checking the quality of different mobile applications Assuring the quality of different systems in the software Writing reports for the bug of the systems Ensuring the standards of quality of the mobile applications",
+      "Checking the quality of different mobile applications, Assuring the quality of different systems in the software, Writing reports for the bug of the systems Ensuring the standards of quality of the mobile applications",
   },
   {
     date: "Jun 2022 - Aug 2022",
     workPosition: "Web Developer (Internship)",
     companyName: "MGHS",
     textBody:
-      "Developing websites for businesses Collaborating with the team to make a quality website for a certain business Providing assurance in the standard of the different businesses Collecting information on the new trends in producing websites Designing websites supporting the standards of the business owners",
+      "Developing websites for businesses, Collaborating with the team to make a quality website for a certain business, Providing assurance in the standard of the different businesses, Collecting information on the new trends in producing websites, Designing websites supporting the standards of the business owners",
   },
 ];
 
@@ -91,4 +92,15 @@ export const contactList = [
   { img_URL: viberNumberIcon, label: "+63 9XX XXX XXXX" },
   { img_URL: locationIcon, label: "Pampanga / Las Piñas" },
   { img_URL: gmailIcon, label: "my@gamil.com" },
+];
+
+export const projectList = [
+  {
+    bg_URL: balagtasyunaryoBg,
+    img_URL: balagtasyunaryoLogo,
+    title: "Balagtasyunaryo",
+    textBody:
+      "Balagtasyunaryo is an educational website in Filipino which aims to cater the teachers and students in discussing the Florante at Laura. The website contains words and summary that can be seen in the story which helps the learners to be more interactive during class discussion.",
+    tools: ["UX/UI Design", "React", "Tailwind"],
+  },
 ];

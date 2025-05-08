@@ -22,8 +22,10 @@ import facebookIcon from "./socialmedia-icon/facebook.png";
 import tiktokIcon from "./socialmedia-icon/tiktok.png";
 import instagramIcon from "./socialmedia-icon/instagram.png";
 import xIcon from "./socialmedia-icon/x.png";
+import balagtasyunaryoBg from "./projects/balagtasyunaryo/bg.png";
+import balagtasyunaryoLogo from "./projects/balagtasyunaryo/Florante_at_Laura.png";
 
-export {menuIcon, closeIcon}
+export { menuIcon, closeIcon };
 
 export { profile };
 
@@ -47,3 +49,5 @@ export {
 export { viberNumberIcon, locationIcon, gmailIcon };
 
 export { facebookIcon, tiktokIcon, instagramIcon, xIcon };
+
+export { balagtasyunaryoBg, balagtasyunaryoLogo };
