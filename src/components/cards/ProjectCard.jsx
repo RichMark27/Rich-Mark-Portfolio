@@ -1,11 +1,21 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-function ProjectCard({ bg_URL, img_URL, title, textBody, tools }) {
+function ProjectCard({
+  toVisit,
+  bg_URL,
+  img_URL,
+  title,
+  textBody,
+  tools,
+  projectLink,
+}) {
   return (
     <div className="flex flex-col lg:flex-row rounded-lg max-lg:max-w-[550px] lg:w-[900px] xl:w-[1150px] overflow-hidden bg-primary mx-auto">
-      <div className="relative flex items-center justify-center w-full h-full max-h-[320px] max-w-[550px] lg:w-[600px] lg:h-[300px]">
-        <img className="absolute z-0 h-full w-full" src={bg_URL} alt="" />
+      <div className="relative flex items-center justify-center w-full h-full max-h-[320px] max-w-[550px] lg:w-[600px] lg:h-[300px] bg-white">
+        {bg_URL && (
+          <img className="absolute z-0 h-full w-full" src={bg_URL} alt="" />
+        )}
         <img className="z-10" src={img_URL} alt="Logo" />
         <motion.div
           initial={{ opacity: 0 }}
@@ -17,8 +27,8 @@ function ProjectCard({ bg_URL, img_URL, title, textBody, tools }) {
             whileHover={{ scale: 1.2 }}
             className="text-2xl font-bold text-white cursor-pointer decoration-accent hover:underline"
           >
-            <a href="https://balagtasyunaryo-v1.onrender.com/" target="_blank">
-              Visit Website!
+            <a href={projectLink} target="_blank">
+              Visit {toVisit}!
             </a>
           </motion.span>
         </motion.div>

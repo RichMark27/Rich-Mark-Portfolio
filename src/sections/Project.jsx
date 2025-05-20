@@ -39,16 +39,17 @@ function Project() {
             {projectList.map((item) => (
               <motion.div key={item.title} variants={projectVariant}>
                 <ProjectCard
+                  toVisit={item.toVisit}
                   bg_URL={item.bg_URL}
                   img_URL={item.img_URL}
                   title={item.title}
                   textBody={item.textBody}
                   tools={item.tools}
+                  projectLink={item.projectLink}
+
                 />
               </motion.div>
             ))}
-
-
           </motion.div>
         </section>
       </div>

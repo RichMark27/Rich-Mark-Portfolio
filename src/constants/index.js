@@ -13,6 +13,7 @@ import {
 } from "../assets/index";
 import { viberNumberIcon, locationIcon, gmailIcon } from "../assets/index";
 import { balagtasyunaryoBg, balagtasyunaryoLogo } from "../assets/index";
+import TodoBg from "../assets/projects/ToDo/Todo.png";
 
 export const navList = [
   { href: "/", label: "Home" },
@@ -96,11 +97,23 @@ export const contactList = [
 
 export const projectList = [
   {
+    toVisit: "Website",
     bg_URL: balagtasyunaryoBg,
     img_URL: balagtasyunaryoLogo,
     title: "Balagtasyunaryo",
     textBody:
       "Balagtasyunaryo is an educational website in Filipino which aims to cater the teachers and students in discussing the Florante at Laura. The website contains words and summary that can be seen in the story which helps the learners to be more interactive during class discussion.",
+    projectLink: "https://balagtasyunaryo-v1.onrender.com/",
     tools: ["UX/UI Design", "React", "Tailwind"],
+  },
+  {
+    toVisit: "Github",
+    bg_URL: "",
+    img_URL: TodoBg,
+    title: "Todo with Drag & Drop",
+    textBody:
+      "A drag-and-drop todo website is a digital to-do list application where users can reorder and organize tasks using the mouse, moving items from one place to another with a simple drag and release action.",
+    projectLink: "https://github.com/RichMark27/ToDo-drag-and-drop",
+    tools: ["UI Design", "React", "Tailwind", "JSON-server"],
   },
 ];
