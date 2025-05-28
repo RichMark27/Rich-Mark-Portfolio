@@ -12,12 +12,12 @@ function ExperienceCard({ date, workPosition, companyName, textBody }) {
       <div className="relative pl-8 border-l-2 border-secondary pb-8 col-start-4 col-end-10">
         <div
           className={`absolute -left-2 top-1.5 h-4 w-4 rounded-full ${
-            date === "Jan 2025 - present" ? "bg-accent" : "bg-secondary"
+            date === "August 2024 - Present" ? "bg-accent" : "bg-secondary"
           } `}
         />
         <div
           className={`absolute -left-2 top-1.5 h-4 w-4 rounded-full ${
-            date === "Jan 2025 - present"
+            date === "August 2024 - Present"
               ? "bg-accent animate-ping"
               : "bg-secondary"
           } `}

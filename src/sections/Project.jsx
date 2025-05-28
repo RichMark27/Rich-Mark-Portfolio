@@ -46,7 +46,6 @@ function Project() {
                   textBody={item.textBody}
                   tools={item.tools}
                   projectLink={item.projectLink}
-
                 />
               </motion.div>
             ))}

@@ -15,6 +15,7 @@ import { viberNumberIcon, locationIcon, gmailIcon } from "../assets/index";
 import { balagtasyunaryoBg, balagtasyunaryoLogo } from "../assets/index";
 import TodoBg from "../assets/projects/ToDo/Todo.png";
 
+// navigation link
 export const navList = [
   { href: "/", label: "Home" },
   { href: "#about", label: "About" },
@@ -24,6 +25,7 @@ export const navList = [
   { href: "#contact", label: "Contact" },
 ];
 
+//can provide
 export const CanProvideList = [
   {
     img_URL: uiUx,
@@ -45,20 +47,21 @@ export const CanProvideList = [
   },
 ];
 
+//experiences
 export const experienceList = [
   {
-    date: "Jan 2025 - present",
-    workPosition: "Operations Manager",
-    companyName: "Likhasan Reading and Tutorial Services",
+    date: "August 2024 - Present",
+    workPosition: "Freelance Web Developer",
+    companyName: "",
     textBody:
-      "Creating a web design for the tutorial center's website, creating graphic designs for educational materials, managing operations for printing educational materials, and mentoring staff for printing educational materials.",
+      "Designing a responsive UI/UX  for Clients, Developing the website with my front-end skills, Applying the software quality assurance for client satisfaction",
   },
   {
-    date: "Jun 2023 - Dec 2025",
+    date: "June 2023 - May 2024",
     workPosition: "Business Owner",
     companyName: "Arcie's Collection",
     textBody:
-      "Managing the daily operations of the business Putting up quality products and services for the people, Managing daily sales and expenses of the business Analyzing the data of the sales",
+      "Managing the daily operations of the business, Putting up quality products and services for the people, Managing daily sales and expenses of the business Analyzing the data of the sales",
   },
   {
     date: "Jan 2023 - Jun 2023",
@@ -76,6 +79,7 @@ export const experienceList = [
   },
 ];
 
+//skills set
 export const skillList = [
   { img_URL: figmaIcon, label: "Figma" },
   { img_URL: htmlIcon, label: "HTML" },
@@ -89,12 +93,14 @@ export const skillList = [
   { img_URL: githubIcon, label: "Github" },
 ];
 
+//conact
 export const contactList = [
   { img_URL: viberNumberIcon, label: "+63 9XX XXX XXXX" },
   { img_URL: locationIcon, label: "Pampanga / Las Piñas" },
   { img_URL: gmailIcon, label: "my@gamil.com" },
 ];
 
+//project
 export const projectList = [
   {
     toVisit: "Website",

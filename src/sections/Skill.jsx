@@ -5,7 +5,10 @@ import { motion } from "framer-motion";
 
 const skillContainerVariant = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: {duration:0.5, delay:0.5, staggerChildren: 0.7 } },
+  visible: {
+    opacity: 1,
+    transition: { duration: 1, staggerChildren: 0.2 },
+  },
 };
 
 const skillVariant = {
@@ -44,11 +47,7 @@ function Skill() {
         >
           {skillList.map((item) => (
             <motion.div variants={skillVariant} key={item.label}>
-              <SkillCard
-                
-                img_URL={item.img_URL}
-                label={item.label}
-              />
+              <SkillCard img_URL={item.img_URL} label={item.label} />
             </motion.div>
           ))}
         </motion.div>
